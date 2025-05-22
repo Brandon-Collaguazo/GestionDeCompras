@@ -1,7 +1,8 @@
 package ec.edu.est.poo.controlador;
 
-import ec.edu.est.poo.clases.*;
-import ec.edu.est.poo.enums.EstadoSolicitud;
+import ec.edu.est.poo.modelos.EstadoSolicitud;
+import ec.edu.est.poo.modelos.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ public class Menu {
     private List<Proveedor> proveedores = new ArrayList<>();
     private List<Producto> productos = new ArrayList<>();
     private List<SolicitudCompra> solicitudes = new ArrayList<>();
+    private List<Departamento> departamentos = new ArrayList<>();
 
     public int leerEntero() {
         while (!scanner.hasNextInt()) {
@@ -115,9 +117,10 @@ public class Menu {
         String telefono = scanner.nextLine();
         System.out.print("Cargo: ");
         String cargo = scanner.nextLine();
-        System.out.print("Departamento: ");
-        String departamento = scanner.nextLine();
+        System.out.print("Id del departamento: ");
+        int depId = leerEntero();
 
+        Departamento departamento = new Departamento(depId, "XD");
         Empleado empleado = new Empleado(id, nombre, direccion, telefono, cargo, departamento);
         empleados.add(empleado);
         System.out.println("Empleado registrado exitosamente.");
@@ -152,7 +155,7 @@ public class Menu {
         } else {
             System.out.println("Lista de Proveedores");
             for (Proveedor proveedor : proveedores) {
-                proveedor.mostrarInfo();
+                proveedor.toString();
                 System.out.println();
             }
         }
@@ -164,7 +167,7 @@ public class Menu {
         } else {
             for (Empleado empleado : empleados) {
                 System.out.println("Lista de empleados");
-                empleado.mostrarInfo();
+                empleado.toString();
                 System.out.println();
             }
         }

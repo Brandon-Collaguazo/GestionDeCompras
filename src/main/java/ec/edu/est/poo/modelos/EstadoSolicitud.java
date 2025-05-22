@@ -1,4 +1,4 @@
-package ec.edu.est.poo.enums;
+package ec.edu.est.poo.modelos;
 
 public enum EstadoSolicitud {
     SOLICITADA,

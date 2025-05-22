@@ -1,4 +1,4 @@
-package ec.edu.est.poo.clases;
+package ec.edu.est.poo.modelos;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package ec.edu.est.poo.interfaces;
+package ec.edu.est.poo.modelos;
 
 public interface Calculable {
     double calcularSubtotal();

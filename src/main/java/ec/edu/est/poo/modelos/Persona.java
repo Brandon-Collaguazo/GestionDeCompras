@@ -1,18 +1,20 @@
-package ec.edu.est.poo.abstracts;
+package ec.edu.est.poo.modelos;
 
 import java.util.Objects;
 
-public abstract class Persona {
+public  class Persona {
     private int id;
     private  String nombre;
     private String direccion;
     private String telefono;
+
     public Persona(int id, String nombre, String direccion, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
     }
+
     public Persona() {
 
     }
@@ -49,13 +51,6 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
-    public void mostrarInfo() {
-        System.out.println("ID: " + id);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Dirección: " + direccion);
-        System.out.println("Teléfono: " + telefono);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -70,11 +65,9 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return super.toString() + "\nPersona{" +
-                "Id: " + id +
-                ", Nombre: '" + nombre + '\'' +
-                ", Dirección: '" + direccion + '\'' +
-                ", Teléfono: '" + telefono + '\'' +
-                '}';
+        return "Id: " + id + "\n" +
+                "Nombre: " + nombre + "\n" +
+                "Dirección: " + direccion + "\n" +
+                "Teléfono: " + telefono + "\n";
     }
 }

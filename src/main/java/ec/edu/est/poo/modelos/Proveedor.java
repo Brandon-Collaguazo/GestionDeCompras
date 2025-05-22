@@ -1,7 +1,4 @@
-package ec.edu.est.poo.clases;
-
-import ec.edu.est.poo.abstracts.Persona;
-import ec.edu.est.poo.interfaces.Buscable;
+package ec.edu.est.poo.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +6,7 @@ import java.util.Objects;
 
 public class Proveedor extends Persona implements Buscable {
     private List<Producto> productos;
+
     public Proveedor() {
 
     }
@@ -28,12 +26,6 @@ public class Proveedor extends Persona implements Buscable {
     }
 
     @Override
-    public void mostrarInfo() {
-        super.mostrarInfo();
-        System.out.println("Productos: " + productos);
-    }
-
-    @Override
     public boolean coincideCon(String criterio) {
         return  String.valueOf(getId()).equals(criterio);
     }
@@ -45,6 +37,7 @@ public class Proveedor extends Persona implements Buscable {
         Proveedor proveedor = (Proveedor) o;
         return Objects.equals(productos, proveedor.productos);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), productos);
@@ -52,8 +45,7 @@ public class Proveedor extends Persona implements Buscable {
 
     @Override
     public String toString() {
-        return super.toString() + "\nProveedor{" +
-                "Productos: " + productos +
-                '}';
+        return super.toString() + "\n" +
+                "Productos: " + productos;
     }
 }

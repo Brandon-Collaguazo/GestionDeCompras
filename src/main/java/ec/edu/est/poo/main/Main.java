@@ -1,10 +1,9 @@
 package ec.edu.est.poo.main;
 
-import ec.edu.est.poo.controlador.Menu;
+import ec.edu.est.poo.vista.VentanaMenu;
 
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.menuPrincipal();
+        new VentanaMenu();
     }
 }

@@ -1,27 +1,26 @@
-package ec.edu.est.poo.clases;
+package ec.edu.est.poo.modelos;
 
-import ec.edu.est.poo.enums.EstadoSolicitud;
-import ec.edu.est.poo.interfaces.Buscable;
-import ec.edu.est.poo.interfaces.Calculable;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class SolicitudCompra implements Calculable, Buscable {
     private int id;
-    private String departamento;
+    private Departamento departamento;
     private EstadoSolicitud estado;
     private List<DetalleCompra> productos;
 
-    public SolicitudCompra() {
+    public SolicitudCompra(int id, String departamento, EstadoSolicitud estado, List<DetalleCompra> detalles) {
+
+
     }
-    public SolicitudCompra(int id, String departamento, EstadoSolicitud estado, List<DetalleCompra> productos) {
+
+    public SolicitudCompra(int id, Departamento departamento, EstadoSolicitud estado, List<DetalleCompra> productos) {
         this.id = id;
         this.departamento = departamento;
         this.estado = estado;
-        this.productos = productos != null ? productos : new ArrayList<>();
+        this.productos = productos;
     }
+
     public int getId() {
         return id;
     }
@@ -30,11 +29,11 @@ public class SolicitudCompra implements Calculable, Buscable {
         this.id = id;
     }
 
-    public String getDepartamento() {
+    public Departamento getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(String departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 
